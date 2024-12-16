@@ -1348,26 +1348,26 @@ footer p{
 .content{
 	height:1000px;
 }
-.image-container{
+.image-container{    
+    position: relative;
+    bottom:30px;
+    width: 100%;
+    height: auto;
+    margin: 0;  /* 移除間隙 */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;  /* 水平置中 */
+    align-items: center;  /* 垂直置中 */
+
 	
-	position: relative;
-    	width: 100%;
-	height:auto;
-	margin:0 0 10px 0 ;
-	top:60px;
-    	overflow: hidden;
-	display: flex;
-    	justify-content: center; /* 水平置中 */
-    	align-items: center; /* 垂直置中 */
-    	height: 100%; /* 確保容器有足夠高度 */
+	
 
 }
 
 
 .image-container img {
-   	width: 80%;
-	opacity:75%;
-	margin:0 auto;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .text-overlay {
@@ -1421,6 +1421,21 @@ footer p{
         max-width: 60%;
         font-size: 1.6vw;
     }
+    .image-container{    
+        position: relative;
+        bottom:46px;
+        width: 100%;
+        height: auto;
+        margin: 0;  /* 移除間隙 */
+        overflow: hidden;
+        display: flex;
+        justify-content: center;  /* 水平置中 */
+        align-items: center;  /* 垂直置中 */
+    
+        
+        
+    
+    }
 }
 
 /* 小於480px的寬度 */
@@ -1436,28 +1451,43 @@ footer p{
 
 }
 .image-grid{
-	height:70%;
-	max-width:98%;
-	margin:0 auto;
-	display:flex;
-	
-	margin-top:100px;
+    height: auto; /* 使用自適應高度 */
+    max-width: 100%; /* 調整整體容器的寬度，確保與頁面寬度一致 */
+    margin: 100px auto 0; /* 利用 auto 使容器水平置中 */
+    display: flex;
+    gap: 70px; /* 圖片間的水平間距 */
+    justify-content: center; /* 確保整體內容置中 */
+    flex-wrap: wrap; /* 允許內容自動換行 */
 	
 }
 .image-item{
-	 display: flex;
-  	justify-content: center;
-	
+    flex: 1 1 calc(25% - 20px); /* 平均分配空間，考慮間距 */
+    max-width: 220px; /* 限制圖片容器的最大寬度 */
+    display: flex;
+    justify-content: center;
+    
+    align-items: center; /* 確保圖片垂直居中 */
+    text-align: center; /* 讓文字水平置中 */
 	
 }
 .image-grid img{
-    width: 80%;
-    height: 90%;
-    object-fit: cover; /* 確保圖片以統一比例裁剪 */
-    transition: transform 0.3s ease;;
+    max-width: 100%; /* 限制圖片寬度不超出容器 */
+    height: auto; /* 自動調整高度保持比例 */
+    object-fit: cover; /* 圖片裁剪避免變形 */
+    transition: transform 0.3s ease;
 }
 .image-grid img:hover {
     transform: scale(1.1); 
+}
+.image-caption {
+    margin-top: 20px; /* 圖片與文字之間的距離 */ 
+    font-size: 14px; 
+    color: #333; /* 字體顏色 */ 
+    font-weight:600;
+    
+
+
+
 }
 @media (max-width: 992px) {
     .image-grid {
@@ -1468,18 +1498,16 @@ footer p{
 	justify-content: center;    
   	
 	margin-top:50px;
-	gap:10% 0%;
-    grid-template-columns: repeat(2, 36%); /* 每行显示2张图片 */
+	
+    grid-template-columns: repeat(2, 200px); /* 每行显示2张图片 */
     }
 	.image-grid img{
-	width: 80%;
+	width: 100%;
 	height:100%;
     	display: block;
 	transition: transform 0.3s ease;
 	}
-	.image-item{
-	 display:flex;
-	} 	
+		
 	.read-more{
 
 	}
@@ -1510,20 +1538,26 @@ iframe {
 
 /* 移动设备的图片网格调整 */
 @media (max-width: 480px) {
+    .image-item{
+       
+       } 	
     .image-grid {
-	
+        position:relative;
+        top:50px;
+    
 	 display: grid;
 	margin:0 auto;
 	
 	 	justify-content: center;    
   	
-	margin-top:30px;
+	
 
-	gap:3% 0%;
+	gap:4% 0%;
         grid-template-columns: 60%; /* 每行显示2张图片 */
     	}
 	.image-grid img{
-	width: 80%;
+      
+	width: 260px;
 	height:100%;
     	display: block;
 	transition: transform 0.3s ease;	
@@ -1648,7 +1682,7 @@ iframe {
 }
 .try_on{
 	position:relative;
-	bottom:15px;
+	bottom:130px;
 	max-width:100%;
 	margin:0 auto;
 	width: 100%; 
@@ -1657,7 +1691,7 @@ iframe {
 	max-width: 1440px; /* 最大寬度以保持一致性 */
 	margin: 0 auto; /* 水平居中 */
 	 
-	position: relative; /* 確保它的定位是穩定的 */
+	
 	 
  
 		
@@ -1665,9 +1699,10 @@ iframe {
 
 .try_on2{
 	position:relative;
-	bottom:120px;
+  
+    bottom:100px;
 	
-	top:1px
+
 	
 		
 }
@@ -1743,7 +1778,7 @@ iframe {
 	}
 	.try_on{
 		position:relative;
-		bottom:30px;
+		bottom:160px;
 	}
 	
 
@@ -1782,6 +1817,17 @@ iframe {
 			
 		}
 	}
+    .try_on{
+        position:relative;
+		bottom:440px;
+        top:0px;
+	}  
+	
+    .try_on2{
+		position:relative;
+		bottom:120px;
+	}
+	
 }
 
 /*pretty_article*/. 
@@ -2835,14 +2881,7 @@ article{
     height: auto;
 }
 
-/* 顯示內容區 */
-.tab-content {
-    display: none;
-}
 
-.tab-content.active {
-    display: block;
-}
 /* Tabs 區域 */
 .tabs {
     display: flex;
@@ -2987,10 +3026,7 @@ article{
 
     
 
-/* active 樣式 */
-.tab-content {
-    display: none;
-}
+
 .tabs-dropdown {
     display: none;
     font-weight: bold;
