@@ -112,12 +112,15 @@
                     <div class="card">
                         <h3>火雞肉飯大對決：阿樓師 vs 民主，誰是你的嘉義味覺英雄？<br></h3>
                         <p class="date">01 Oct， 2024</p>
-                        <img src="./images/IMG_4339.JPG" alt="Content Image">
+                        <img src="./images/IMG_4339 .jpg" alt="Content Image">
                         <p class="type">市井美食客</p>
                         <p class="description">  特此聲明:此文章中，無任何火雞肉飯店受到傷害，純屬作者個人觀點，各位客官請親自體驗~……</p>
                         <a href="article_nature_nose.html" class="read-more">Continue Reading</a>
                         <!-- 将 .extra-photo 移动到 .card 内部的最后一行 -->
-                        <img src="./images/5720ae229f0c0c163f2163c4c4665510.jpg" alt="Additional Image" class="extra-photo">
+                        <a href="book_eat.html">
+                            <img src="./images/e4.jpg" alt="Additional Image" class="extra-photo">
+                        </a>
+                       
                     </div>
                 </div>
                 <div id="meigan-card" class="tab-content">
@@ -129,7 +132,10 @@
                         <p class="description"> 「如果以三個詞形容你們店或是想成獻給顧客的感覺，會是哪三個詞?」 品牌經理人jimmy道:「我想會是……</p>
                         <a href="article_pretty_huama.html" class="read-more">Continue Reading</a>
                         <!-- 将 .extra-photo 移动到 .card 内部的最后一行 -->
-                        <img src="./images/5720ae229f0c0c163f2163c4c4665510.jpg" alt="Additional Image" class="extra-photo">
+                        <a href="book_pretty.html">
+                            <img src="./images/e1.jpg" alt="Additional Image" class="extra-photo">
+                        </a>
+                        <img src="./images/e1.jpg" alt="Additional Image" class="extra-photo">
                     </div>
                 </div>
                 <div id="shiguang-card" class="tab-content">
@@ -141,7 +147,10 @@
                         <p class="description">「嘉義市是一座很方便的城市,我們喜歡騎摩托車載著小朋友一家四口這樣亂逛。」……</p>
                         <a href="article_history_supiido.html" class="read-more">Continue Reading</a>
                         <!-- 将 .extra-photo 移动到 .card 内部的最后一行 -->
-                        <img src="./images/5720ae229f0c0c163f2163c4c4665510.jpg" alt="Additional Image" class="extra-photo">
+                        <a href="book_history.html">
+                            <img src="./images/e3.jpg" alt="Additional Image" class="extra-photo">
+                        </a>
+                       
                     </div>
                 </div>  
                 
@@ -154,7 +163,10 @@
                         <p class="description"> 「原先從事醫護行業的Gini,因為醫院所舉辦的減脂比賽,開始健身……」</p>
                         <a href="article_nature_nose.html" class="read-more">Continue Reading</a>
                         <!-- 将 .extra-photo 移动到 .card 内部的最后一行 -->
-                        <img src="./images/5720ae229f0c0c163f2163c4c4665510.jpg" alt="Additional Image" class="extra-photo">
+                        <a href="book_nature.html">
+                            <img src="./images/e2.jpg" alt="Additional Image" class="extra-photo">
+                        </a>
+                       
                     </div>
                 </div>
                 
@@ -171,36 +183,39 @@
         }
         
         // showContent 函數，根據 tabId 顯示對應內容和影片
-        function showContent(tabId) {
-            const buttons = document.querySelectorAll('.tab-button');
-            const contents = document.querySelectorAll('.tab-content');
-            const dropdown = document.querySelector('.tabs-dropdown');
-        
-            // 切換按鈕和內容的顯示狀態
-            buttons.forEach(button => button.classList.remove('active'));
-            contents.forEach(content => content.classList.remove('active'));
-        
-            const button = Array.from(buttons).find(btn =>
-                btn.getAttribute('onclick').includes(tabId)
-            );
-            if (button) button.classList.add('active');
-        
-            const content = document.getElementById(tabId);
-            if (content) content.classList.add('active');
-        
-            // 切換右側的卡片內容
-            const rightContentId = `${tabId}-card`;
-            document.querySelectorAll('.right-content .tab-content').forEach(content => content.classList.remove('active'));
-            const rightContent = document.getElementById(rightContentId);
-            if (rightContent) {
-                rightContent.classList.add('active');
-            }
-        
-            // 讓下拉選單選擇與 tab 匹配
-            if (dropdown) {
-                dropdown.value = tabId;
-            }
-        }</script>  
+        function showContent(tabId) { // 移除左側內容的 `active` 類名
+    const leftContents = document.querySelectorAll('.left-content .tab-content');
+    leftContents.forEach(content => content.classList.remove('active'));
+
+    // 移除右側卡片的 `active` 類名
+    const rightContents = document.querySelectorAll('.right-content .tab-content');
+    rightContents.forEach(content => content.classList.remove('active'));
+
+    // 顯示對應的左側內容
+    const targetLeftContent = document.getElementById(tabId);
+    if (targetLeftContent) targetLeftContent.classList.add('active');
+
+    // 顯示對應的右側卡片內容
+    const targetRightContent = document.getElementById(`${tabId}-card`);
+    if (targetRightContent) targetRightContent.classList.add('active');
+ 
+
+    // 處理 tab 按鈕顯示狀態
+    const buttons = document.querySelectorAll('.tab-button');
+    buttons.forEach(button => button.classList.remove('active'));
+    const activeButton = Array.from(buttons).find(btn => 
+        btn.getAttribute('onclick').includes(tabId)
+    );
+    if (activeButton) activeButton.classList.add('active');
+}// 解析 URL 中的 tabId 並顯示對應內容
+window.onload = function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const tabId = urlParams.get('tabId');
+    if (tabId) {
+        showContent(tabId);
+    }
+};
+</script>  
    
   
 </body>
