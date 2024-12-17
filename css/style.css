@@ -1951,6 +1951,33 @@ article{
 
 	
 }
+@media (max-width: 768px) {
+    .three-images {
+        grid-template-columns: 1fr; /* 小屏幕时单列显示 */
+        grid-gap: 20px; /* 减小间距 */
+    }
+
+    .right-images {
+        grid-gap: 20px; /* 减小图片之间的间距 */
+    }
+}
+
+@media (max-width: 480px) {
+    .three-images {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        grid-gap: 10px;
+    }
+
+    .right-images {
+        grid-gap: 10px; /* 更小屏幕时图片间距更小 */
+    }
+}
+
+@media (max-width: 480px){
+	font-size: 8px;
+}
+
  .secondary-image p{
 	text-align:center;
 	color: #9A9590;
