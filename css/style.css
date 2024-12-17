@@ -2420,9 +2420,14 @@ article{
 	margin:12px 0px 0px 52%;	
 	}
 }
+@media screen and (max-width: 400px){
+	.card1 .read-more {
+	margin:12px 0px 0px 58%;	
+	}
+}
 @media screen and (max-width: 360px){
 	.card1 .read-more {
-	margin:12px 0px 0px 52%;	
+	margin:12px 0px 0px 54%;	
 	}
 }
 
