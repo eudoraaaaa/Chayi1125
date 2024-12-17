@@ -443,7 +443,8 @@ header {
 /* 屏幕宽度小于等于 688px 时，使用另一张图片 */
 @media (max-width: 688px) {
     .navtaxt img {
-        content: url('./images/直的.png'); /* 更换为新图片 */
+        width: 85%; 
+        max-height: 500px;
     }
 }
 
