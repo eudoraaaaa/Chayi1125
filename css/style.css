@@ -1951,8 +1951,11 @@ article{
 
 	
 }
+
 @media (max-width: 480px){
-	font-size: 8px;
+	.content1 .main-image p{
+		font-size: 8px;
+	}
 }
 
 @media (max-width: 768px) {
