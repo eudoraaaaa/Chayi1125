@@ -2156,6 +2156,12 @@ article{
 	height:auto;
 	
 }
+@media (max-width: 480px) {
+    .secondary-image p {
+        font-size: 8px; /* 更小的屏幕上字体也相应缩小 */
+	    
+    }
+}
 .content1 h2{
 	
 	color: #000;
