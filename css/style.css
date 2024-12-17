@@ -461,6 +461,12 @@ header {
         max-height: 500px;
     }
 }
+@media (max-width: 480px) {
+    .navtaxt img {
+        width: 85%;  /* 在小屏幕上，图片宽度可以稍微增加 */
+        max-height: 500px;
+    }
+}
 
 
 
