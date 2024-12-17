@@ -2121,7 +2121,7 @@ article{
     }
     .images1 img {
         max-width: 71%; /* 小屏幕下图片宽度稍微缩小 */
-	    height
+	    height:auto;
     }
 }
 
