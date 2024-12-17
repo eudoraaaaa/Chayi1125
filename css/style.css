@@ -1951,6 +1951,10 @@ article{
 
 	
 }
+@media (max-width: 480px){
+	font-size: 8px;
+}
+
 @media (max-width: 768px) {
     .three-images {
         grid-template-columns: 1fr; /* 小屏幕时单列显示 */
