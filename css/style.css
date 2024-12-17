@@ -109,30 +109,35 @@ header {
   
 @media (max-width: 900px) {
     .menu ul {
-            width: 200px;
-          height: calc(100vh - 88px); /* 使菜单栏占据导航栏下方的整个网页高度 */
-          position: fixed;
-          right: 0;
-          top: 88px; /* 从导航栏底部开始 */
-          background-color: #fff;
-          flex-direction: column;
-          align-items: center;
-          justify-content: flex-start; /* 从上方开始显示菜单项 */
-          display: none;
-          z-index: 10;
-      }
+        width: 200px;
+        height: calc(100vh - 88px); /* 使菜单栏占据导航栏下方的整个网页高度 */
+        position: fixed;
+        right: 0;
+        top: 88px; /* 从导航栏底部开始 */
+        background-color: #fff;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; /* 从上方开始显示菜单项 */
+        display: none;
+        z-index: 10;
+    }
   
-      .menu ul.show {
-          display: flex;
-      }
+    .menu ul.show
+    {
+ 
+        display: flex;
+    }
+
   
-      .menu ul li {
-          margin: 10px 0;
-      }
+    .menu ul li 
+    {
+        margin: 10px 0;
+    }
   
-      .icon {
-          display: block;
-      }
+    .icon 
+    {
+        display: block;
+    }
 }
   
 @media (max-width: 480px) {
@@ -160,6 +165,7 @@ header {
   
     .icon {
         display: block;
+        
     }
 }
 
@@ -181,7 +187,7 @@ html{
 	
     margin: 0;
     padding: 0;
-	 height: 100%;
+	height: 100%;
 }
 
 
@@ -189,12 +195,12 @@ body{
 	
     margin: 0;
     padding: 0;
-	 max-height: 100%;
+	max-height: 100%;
      
 	
 }
 article{
-	 flex-grow: 1;  /* 讓 article 填充剩餘的空間 */
+	flex-grow: 1;  /* 讓 article 填充剩餘的空間 */
     padding-bottom: 30px;  /* 給 footer 一點空間 */
 }
 
@@ -349,10 +355,16 @@ header {
         justify-content: flex-start; /* 从上方开始显示菜单项 */
         display: none;
         z-index: 10;
+        margin-top: -28px; /* 根据需要调整负值 */
+        
     }
 
     .menu ul.show {
         display: flex;
+        display: flex;
+        transform: translateY(0);
+        opacity: 1;
+     
     }
 
     .menu ul li {
@@ -388,6 +400,7 @@ header {
         justify-content: flex-start; /* 从上方开始显示菜单项 */
         display: none;
         z-index: 10;
+        margin-top: -47px; /* 根据需要调整负值 */
     }
 
     .menu ul.show {
@@ -952,34 +965,43 @@ header {
 	}
 }
 @media (max-width: 960px) {
-	.text2{
+	.text2
+    {
 		font-size: 22px;
-	}.route2{
+	}
+    .route2
+    {
         margin: 0 0;
-       }
+    }
 }
 @media (max-width: 678px) {
-	.text2{
+	.text2
+    {
 		font-size: 20px;
 	}
-   .route2{
+   .route2
+   {
     margin:0 0;
    }
 }
 @media (max-width: 578px) {
-	.text2{
+	.text2
+    {
 		font-size: 18px;
 	}
-    .route2{
+    .route2
+    {
         margin: 0 0;
     }
     
 }
 @media (max-width: 480px) {
-	.text2{
+	.text2
+    {
 		font-size: 16px;
 	}
-    .route2{
+    .route2
+    {
         margin: 0 0;
     }
 }
@@ -1004,33 +1026,38 @@ header {
     margin-bottom: 20px; /* 控制與下方區塊的距離 */
 }
 @media (max-width: 1140px) {
-	.project span{
+	.project span
+    {
 		font-size: 28px;
 	   
 
 	}
 }
 @media (max-width: 960px) {
-	.project span{
+	.project span
+    {
 		font-size: 26px;
 	}
-}.
+}
 @media (max-width: 678px) {
-	.project span{
+	.project span
+    {
 		font-size: 24px;
     
 	}
 
 }
 @media (max-width: 578px) {
-	.project span{
+	.project span
+    {
 		font-size: 22px;
         
 	}
     
 }
 @media (max-width: 480px) {
-	.project span{
+	.project span
+    {
 		font-size: 20px;
        
 	}
@@ -1086,7 +1113,7 @@ header {
 /* 在中型螢幕上適度調整間距 */
 @media (max-width: 768px) {
     .project_content {
-        font-size: 16px !important;
+        font-size: 14px !important;
         line-height: 1.6;
         margin-bottom: 30px; /* 中型螢幕上，稍微增加距離防止重疊 */
     }
@@ -1095,8 +1122,9 @@ header {
 /* 手機尺寸下，繼續保持距離避免重疊 */
 @media (max-width: 480px) {
     .project_content {
-        line-height: 1.6;
+        line-height: 1.8;
         margin-bottom: 40px; /* 手機螢幕上保持距離避免重疊 */
+        font-size: 12px !important;
     }
 }
 
@@ -1545,16 +1573,16 @@ iframe {
         position:relative;
         top:50px;
     
-	 display: grid;
-	margin:0 auto;
+	    display: grid;
+	    margin:0 auto;
 	
 	 	justify-content: center;    
   	
 	
 
-	gap:4% 0%;
+	    gap:4% 0%;
         grid-template-columns: 60%; /* 每行显示2张图片 */
-    	}
+    }
 	.image-grid img{
       
 	width: 260px;
@@ -1566,29 +1594,29 @@ iframe {
 .content-grid {
 	
   	justify-content: center;
-    	display: grid;
-    	grid-template-columns: repeat(3,330px);
+    display: grid;
+    grid-template-columns: repeat(3,330px);
 
 	
 	gap: 90px 70px;
 	padding-top:81px;		
-    	max-width:100%;
+    max-width:100%;
 
 }
 
 .card {
 	height:100%;
 	width:100%;
-    	background-color:none;
+    background-color:none;
 
-    	border-radius: 8px;
+    border-radius: 8px;
    
-    	overflow: hidden;
-    	display: flex;
-    	flex-direction: column;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
    
 	
-    	box-sizing: border-box;
+    box-sizing: border-box;
 	
 	
 }
@@ -1622,7 +1650,7 @@ iframe {
 	transition: transform 0.3s ease;
    	
  	
-    	margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 .card img:hover {
     transform: scale(1.1); 
@@ -1633,19 +1661,19 @@ iframe {
 	font-style: normal;
 	font-weight: 600;
 	line-height: 24px
-    	margin:15px 12;
+    margin:15px 12;
 	margin-top:10px;
 }
 
 .card .description {
 	width: 100%;
 	height: 60px;
-    	color: #8C6C57;
+    color: #8C6C57;
 	font-size: 14px;
 	font-style: normal;
 	font-weight: 400;
 	line-height:21px;
-    	margin-top:20px;
+    margin-top:20px;
 	margin-left:1px;
 }
 
@@ -1656,10 +1684,10 @@ iframe {
 
 	
     	
-    	color: white;
-    	text-decoration: none;
-    	border-radius: 4px;
-    	font-size: 14px;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
 	font-weight:600;
 	line-height:21px;
 
@@ -1669,7 +1697,7 @@ iframe {
 }
 
 .card .read-more:hover {
-	    background-color: #FE9858;
+	background-color: #FE9858;
 }
 
 .content-grid > .card:nth-child(7),
@@ -2295,7 +2323,7 @@ article{
 }
 
 .card1 .read-more {
-   	margin:12px 0px 0px 60%;
+   	margin:12px 0px 0px 2px;
   	padding:10px 10px;
 	text-align:center;
 
@@ -2304,7 +2332,7 @@ article{
     	color: white;
     	text-decoration: none;
     	border-radius: 4px;
-    	font-size: 14px;
+    	font-size: 12px;
 	font-weight:600;
 	line-height:21px;
 
@@ -3359,7 +3387,7 @@ article{
     }
    footer p{
     position:relative;
-  bottom:14px;
+  bottom:2px;
    }
    .card h3{
         display:inline;
