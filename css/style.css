@@ -2092,7 +2092,7 @@ article{
         flex-direction: column; /* 在小屏幕下图片竖直排列 */
     }
     .images1 img {
-        max-width: 90%; /* 小屏幕下图片宽度稍微缩小 */
+        max-width: 70%; /* 小屏幕下图片宽度稍微缩小 */
     }
 }
 
