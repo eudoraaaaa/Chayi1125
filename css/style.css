@@ -2411,10 +2411,14 @@ article{
 	
 	background-color: #8C6C57;
 }
-
+@media screen and (max-width: 480px){
+	.card1 .read-more {
+	margin:12px 0px 0px 52%;	
+	}
+}
 @media screen and (max-width: 360px){
 	.card1 .read-more {
-	margin:12px 0px 0px 150px;	
+	margin:12px 0px 0px 52%;	
 	}
 }
 
