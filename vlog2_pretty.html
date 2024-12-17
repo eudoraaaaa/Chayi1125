@@ -18,7 +18,7 @@
             </h1>  
             <span class="icon" onclick="toggleMenu()">☰</span>
             <ul id="menu-links">
-                <li><a href="https://shi-jia-yan.github.io/hearttext/hearttext.html">讀嘉診療所</a></li>
+                <li><a href="#">讀嘉診療所</a></li>
                 <li><a href="vlog.html">嘉義點vlog</a></li>
                 <li><a href="article.html">讀嘉記義</a></li>
                 <li><a href="about.html">1+1=4</a></li>
@@ -44,10 +44,10 @@
                 
                 <!-- 小螢幕下拉選單，預設隱藏 -->
                 <select class="tabs-dropdown" onchange="handleTabChange(event)">
-                    <option value="shijing">市井美食客</option>
+                    <option value="shijing">風情收藏家</option>
                     <option value="meigan">美感觀察家</option>
                     <option value="shiguang">時光復刻員</option>
-                    <option value="fengqing">風情收藏家</option>
+                    <option value="fengqing">市井美食客</option>
             
                 
                     
@@ -135,7 +135,7 @@
                         <a href="book_pretty.html">
                             <img src="./images/e1.jpg" alt="Additional Image" class="extra-photo">
                         </a>
-                        <img src="./images/e1.jpg" alt="Additional Image" class="extra-photo">
+                        
                     </div>
                 </div>
                 <div id="shiguang-card" class="tab-content">
@@ -181,9 +181,15 @@
             const selectedTab = event.target.value;
             showContent(selectedTab);
         }
-        
-        // showContent 函數，根據 tabId 顯示對應內容和影片
-        function showContent(tabId) { // 移除左側內容的 `active` 類名
+     // 當選擇下拉選單的選項時，顯示對應的影片
+function handleTabChange(event) {
+    const selectedTab = event.target.value;
+    showContent(selectedTab);
+}
+
+// showContent 函數，根據 tabId 顯示對應內容和影片
+function showContent(tabId) {
+    // 移除左側內容的 `active` 類名
     const leftContents = document.querySelectorAll('.left-content .tab-content');
     leftContents.forEach(content => content.classList.remove('active'));
 
@@ -198,23 +204,32 @@
     // 顯示對應的右側卡片內容
     const targetRightContent = document.getElementById(`${tabId}-card`);
     if (targetRightContent) targetRightContent.classList.add('active');
- 
 
     // 處理 tab 按鈕顯示狀態
     const buttons = document.querySelectorAll('.tab-button');
     buttons.forEach(button => button.classList.remove('active'));
+
     const activeButton = Array.from(buttons).find(btn => 
         btn.getAttribute('onclick').includes(tabId)
     );
     if (activeButton) activeButton.classList.add('active');
-}// 解析 URL 中的 tabId 並顯示對應內容
+
+    // 更新下拉選單
+    const dropdown = document.querySelector('.tabs-dropdown');
+    if (dropdown) {
+        dropdown.value = tabId;  // 根據選中的 Tab 更新下拉選單的選擇
+    }
+}
+
+// 解析 URL 中的 tabId 並顯示對應內容
 window.onload = function() {
     const urlParams = new URLSearchParams(window.location.search);
     const tabId = urlParams.get('tabId');
     if (tabId) {
         showContent(tabId);
     }
-};
+};   
+
 </script>  
    
   
