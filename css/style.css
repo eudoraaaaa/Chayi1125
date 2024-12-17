@@ -2090,15 +2090,17 @@ article{
     }
     .imagenew {
         flex-direction: column; /* 在小屏幕下图片竖直排列 */
+	gap: 10px; /* 设置图片之间的垂直间距 */
     }
     .images1 img {
-        max-width: 70%; /* 小屏幕下图片宽度稍微缩小 */
+        max-width: 80%; /* 小屏幕下图片宽度稍微缩小 */
     }
 }
 
 @media (max-width: 480px) {
     .images1 p {
         font-size: 10px; /* 更小的屏幕上字体也相应缩小 */
+	    
     }
 }
 .secondary-image p{
