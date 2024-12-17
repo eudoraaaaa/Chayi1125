@@ -2148,6 +2148,17 @@ article{
 	letter-spacing: 1.6px;
 	font-weight:600;
 }
+@media screen and (max-width: 768px){
+	.infro p{
+		font-size: 16px;
+	}
+}
+@media screen and (max-width: 480px){
+	.infro p{
+		font-size: 14px;
+	}
+}
+
 
 .you-may-also-like {
 	position: relative;
