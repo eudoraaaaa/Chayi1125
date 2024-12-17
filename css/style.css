@@ -2411,7 +2411,11 @@ article{
 	
 	background-color: #8C6C57;
 }
-
+@media screen and (max-width: 480px){
+	.card1 .read-more {
+	margin:12px 0px 0px 145px;	
+	}
+}
 
 .card1 .read-more:hover {
 	 background-color: #FE9858;
