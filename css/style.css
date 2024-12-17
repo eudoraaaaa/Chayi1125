@@ -2470,7 +2470,7 @@ article{
 .right-images{
 	display: grid;
     	grid-template-rows: 1 382px; 
-	 grid-gap: 28px;
+	 grid-gap: 20px;
 }
 .right-images img{
 	width:100%
