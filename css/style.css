@@ -2372,7 +2372,7 @@ article{
 
 .card1 img {
 	width: 100%;
-	
+	max-width: 600px;
    	height:46%;
  	
     	margin-bottom: 10px;
