@@ -210,15 +210,15 @@
             
         
         
-        </script>
-        <script>
+        </script><script>
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       const el = entry.target;
       const originalText = el.getAttribute('data-text');
 
       if (entry.isIntersecting) {
-        el.textContent = ''; // 清空再打字
+        // Reset typing effect
+        el.textContent = '';
         let i = 0;
         const interval = setInterval(() => {
           el.textContent += originalText.charAt(i);
@@ -226,19 +226,21 @@
           if (i > originalText.length) clearInterval(interval);
         }, 100);
       } else {
-        el.textContent = ''; // 滑出時也清空
+        // Optional: clear text when out of view
+        el.textContent = '';
       }
     });
+  }, {
+    threshold: 0.5  // 視窗中顯示 50% 才觸發
   });
 
   document.querySelectorAll('.typewriter').forEach(el => {
-    // 存原本文字在 data-text 中
     el.setAttribute('data-text', el.textContent);
-    el.textContent = ''; // 初始清空
+    el.textContent = ''; // 初始清空文字
     observer.observe(el);
   });
 </script>
-
+    
     </body>
     <footer>
         Copyright © 2024-2025老闆，嘉義碗.
