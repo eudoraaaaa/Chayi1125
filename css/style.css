@@ -482,7 +482,7 @@ header {
   overflow: hidden;
   border-right: 2px solid black;
   font-family: monospace;
-	texy-align:center;
+	text-align:center;
 }
 
 @keyframes blinkCursor {
