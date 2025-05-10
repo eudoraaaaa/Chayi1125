@@ -477,7 +477,7 @@ header {
   animation: breathe 5s ease-in-out infinite;
 }
 .typewriter {
-  display: inline-block;
+
   white-space: nowrap;
   overflow: hidden;
   border-right: 2px solid black;
