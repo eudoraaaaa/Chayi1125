@@ -476,6 +476,19 @@ header {
 .breathe {
   animation: breathe 5s ease-in-out infinite;
 }
+.typewriter {
+  display: inline-block;
+  border-right: 2px solid #8C6C57;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blinkCursor 0.75s steps(1) infinite;
+}
+
+@keyframes blinkCursor {
+  0% { border-color: #8C6C57; }
+  50% { border-color: transparent; }
+  100% { border-color: #8C6C57; }
+}
 
 .content {
     
