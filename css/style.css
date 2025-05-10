@@ -538,7 +538,7 @@ header {
 
 .pretty span{
 	color: #8C6C57;
-	margin: 0 auto;
+	width:1440px;
 	text-align: center;
 	font-size: 36px;
 	font-style: normal;
