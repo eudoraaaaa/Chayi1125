@@ -211,19 +211,33 @@
         
         
         </script>
-       .typewriter {
-  display: inline-block;
-  border-right: 2px solid #8C6C57;
-  white-space: nowrap;
-  overflow: hidden;
-  animation: blinkCursor 0.75s steps(1) infinite;
-}
+        <script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const el = entry.target;
+      const originalText = el.getAttribute('data-text');
 
-@keyframes blinkCursor {
-  0% { border-color: #8C6C57; }
-  50% { border-color: transparent; }
-  100% { border-color: #8C6C57; }
-}
+      if (entry.isIntersecting) {
+        el.textContent = ''; // 清空再打字
+        let i = 0;
+        const interval = setInterval(() => {
+          el.textContent += originalText.charAt(i);
+          i++;
+          if (i > originalText.length) clearInterval(interval);
+        }, 100);
+      } else {
+        el.textContent = ''; // 滑出時也清空
+      }
+    });
+  });
+
+  document.querySelectorAll('.typewriter').forEach(el => {
+    // 存原本文字在 data-text 中
+    el.setAttribute('data-text', el.textContent);
+    el.textContent = ''; // 初始清空
+    observer.observe(el);
+  });
+</script>
 
     </body>
     <footer>
