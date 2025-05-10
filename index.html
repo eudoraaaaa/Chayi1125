@@ -211,31 +211,19 @@
         
         
         </script>
-        <script>
-function typeWriterEffect(element, text, speed = 150) {
-  let i = 0;
-  function typing() {
-    if (i < text.length) {
-      element.textContent += text.charAt(i);
-      i++;
-      setTimeout(typing, speed);
-    }
-  }
-  typing();
+       .typewriter {
+  display: inline-block;
+  border-right: 2px solid #8C6C57;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blinkCursor 0.75s steps(1) infinite;
 }
 
-// 只打一次
-let hasTyped = false;
-window.addEventListener("scroll", () => {
-  const elem = document.querySelector(".typewriter");
-  const text = elem.getAttribute("data-text");
-  const rect = elem.getBoundingClientRect();
-  if (!hasTyped && rect.top < window.innerHeight - 100) {
-    hasTyped = true;
-    typeWriterEffect(elem, text);
-  }
-});
-</script>
+@keyframes blinkCursor {
+  0% { border-color: #8C6C57; }
+  50% { border-color: transparent; }
+  100% { border-color: #8C6C57; }
+}
 
     </body>
     <footer>
