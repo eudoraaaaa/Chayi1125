@@ -211,6 +211,32 @@
         
         
         </script>
+        <script>
+function typeWriterEffect(element, text, speed = 150) {
+  let i = 0;
+  function typing() {
+    if (i < text.length) {
+      element.textContent += text.charAt(i);
+      i++;
+      setTimeout(typing, speed);
+    }
+  }
+  typing();
+}
+
+// 只打一次
+let hasTyped = false;
+window.addEventListener("scroll", () => {
+  const elem = document.querySelector(".typewriter");
+  const text = elem.getAttribute("data-text");
+  const rect = elem.getBoundingClientRect();
+  if (!hasTyped && rect.top < window.innerHeight - 100) {
+    hasTyped = true;
+    typeWriterEffect(elem, text);
+  }
+});
+</script>
+
     </body>
     <footer>
         Copyright © 2024-2025老闆，嘉義碗.
