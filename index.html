@@ -210,33 +210,27 @@
             
         
         
-        </script><script>
+        </script>
+        <script>
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      const el = entry.target;
-      const originalText = el.getAttribute('data-text');
-
-      if (entry.isIntersecting) {
-        // Reset typing effect
+      if (entry.isIntersecting && !entry.target.classList.contains('typed')) {
+        const el = entry.target;
+        const text = el.textContent;
         el.textContent = '';
+        el.classList.add('typed'); // 防止重複打字
+
         let i = 0;
         const interval = setInterval(() => {
-          el.textContent += originalText.charAt(i);
+          el.textContent += text.charAt(i);
           i++;
-          if (i > originalText.length) clearInterval(interval);
-        }, 100);
-      } else {
-        // Optional: clear text when out of view
-        el.textContent = '';
+          if (i > text.length) clearInterval(interval);
+        }, 100); // 每100ms打一個字，可調整速度
       }
     });
-  }, {
-    threshold: 0.5  // 視窗中顯示 50% 才觸發
   });
 
   document.querySelectorAll('.typewriter').forEach(el => {
-    el.setAttribute('data-text', el.textContent);
-    el.textContent = ''; // 初始清空文字
     observer.observe(el);
   });
 </script>
