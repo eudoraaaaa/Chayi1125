@@ -490,6 +490,7 @@ header {
   50% { border-color: transparent; }
   100% { border-color: #8C6C57; }
 }
+
 .content {
     
     align-items: center; /* 垂直居中 */
