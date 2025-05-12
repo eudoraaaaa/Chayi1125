@@ -18,7 +18,7 @@ body{
     margin: 0;
     padding: 0;
     max-height: 100%;
- cursor: url('images/11zon_head.cur'), auto;
+ cursor: url('images/11zon_head.cur') 16 16, auto;
 }
 
 article{
